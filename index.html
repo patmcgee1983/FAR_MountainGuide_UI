@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/album/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://getbootstrap.com/docs/4.0/assets/img/favicons/favicon.ico">
+
+    <title>Fernie Mountain Guide</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="./src/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="./src/album.css" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/bb23eb52d3.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">About</h4>
+              <p class="text-muted">This Proof of Concept Application is (c) 2022 by Patrick McGee</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="https://getbootstrap.com/docs/4.0/examples/album/#" class="text-white">Follow on Twitter</a></li>
+                <li><a href="https://getbootstrap.com/docs/4.0/examples/album/#" class="text-white">Like on Facebook</a></li>
+                <li><a href="https://getbootstrap.com/docs/4.0/examples/album/#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          <a href="https://getbootstrap.com/docs/4.0/examples/album/#" class="navbar-brand d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            <strong>Album</strong>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Fernie Mountain Guide</h1>	 
+		  <h2 class="jumbotron-heading"><i id="button_prev_day" class="fa-solid fa-arrow-left"></i> <span id="header_date"></span> <i id="button_next_day" class="fa-solid fa-arrow-right"></i></h2>
+          <p class="lead text-muted">Lift Status by Time</p>
+          <p>
+		  <!--
+            <a href="https://getbootstrap.com/docs/4.0/examples/album/#" class="btn btn-primary my-2">Main call to action</a>
+            <a href="https://getbootstrap.com/docs/4.0/examples/album/#" class="btn btn-secondary my-2">Secondary action</a>
+			-->
+			<div id="data"></div>
+          </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+            <div class="col-md-6">
+              <div class="card mb-6 box-shadow">
+               <!-- <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1851bb8e20e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1851bb8e20e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;"> -->
+                <div class="card-body">
+				<p class="card-text">Week view of the 24 hour snowfall</p>
+					<div id="new_snow_chart"></div>
+					
+                  <p class="card-text"></p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      
+                    </div>
+                    <!-- <small class="text-muted">9 mins</small> -->
+					
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card mb-6 box-shadow">
+                <!-- <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22348%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20348%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_1851bb8e20e%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A17pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_1851bb8e20e%22%3E%3Crect%20width%3D%22348%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22116.71875%22%20y%3D%22120.3%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true" style="height: 225px; width: 100%; display: block;"> -->
+                <div class="card-body">
+				<p class="card-text">Weekly view of high and low temps for Upper and Lower Mountain</p>
+				<div id="temps_chart"></div>
+                  
+				  <!--
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                    </div>
+					-->
+                    <!-- <small class="text-muted">9 mins</small> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+		
+		 <p class="lead text-muted">Resort Comments</p>
+		  <div id="resort_comments"></div>
+		  
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <!-- <a href="https://getbootstrap.com/docs/4.0/examples/album/#">Back to top</a> -->
+        </p>
+        <p></p>
+        <p></p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./src/jquery-3.2.1.slim.min.js.download" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="./src/popper.min.js.download"></script>
+    <script src="./src/bootstrap.min.js.download"></script>
+    <script src="./src/holder.min.js.download"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+	
+	var global_date
+	
+	
+	function previousDate()
+	{
+		current_date = new Date(global_date)
+		
+		current_date.setDate(current_date.getDate()-1)
+		
+		var dd = String(current_date.getDate()).padStart(2, '0');
+		var mm = String(current_date.getMonth() + 1).padStart(2, '0'); //January is 0!
+		var yyyy = current_date.getFullYear();
+
+		current_date = yyyy + "-" + mm + "-" + (dd * 1 + 1)
+				
+		getData(current_date)
+	}
+	
+	function nextDate()
+	{
+		current_date = new Date(global_date)
+		
+		current_date.setDate(current_date.getDate()+1)
+		
+		var dd = String(current_date.getDate()).padStart(2, '0');
+		var mm = String(current_date.getMonth() + 1).padStart(2, '0'); //January is 0!
+		var yyyy = current_date.getFullYear();
+
+		current_date = yyyy + "-" + mm + "-" + (dd * 1 + 1)
+				
+		getData(current_date)
+	}
+	
+	
+	function getData(date)
+	{	
+
+		if (date)
+		{
+			var today = new Date(date)
+		}
+		else
+		{
+			var today = new Date();
+			var dd = String(today.getDate()).padStart(2, '0');
+			var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+			var yyyy = today.getFullYear();
+
+			date = yyyy + "-" + mm + "-" + dd
+		}
+		
+
+		global_date = date
+
+		$("#header_date").html(date)
+		
+		
+		getLast7DaysSnow(date)
+		getLast7DayTemps(date)
+		getComments(date)
+		
+		// date = today.getDate()
+		$.post("getData.php", { date: date }, function(result)
+		{
+			
+			console.log(result)
+			$("#data").html("")
+			
+			output = ""
+			output += "<table class=\"full-table table-striped table-hover\">"
+			
+			output += "<tr>"
+			output += "<th></th>"
+			for (i=0; i<result.data[0].length; i++)
+			{
+				output += "<th>"+result.data[0][i].time.substring(10,16)+"</th>"
+			}
+			output += "</tr>"
+			for (i=2; i<result.data[0][0].bowls.length; i++)
+			{
+				
+				output += "<tr>"
+				
+				output += "<td>"+result.data[0][0].bowls[i].bowl.replace(/_/g," ").replace("39","'")+"</td>"
+				
+				for (j= 0; j < result.data[0].length; j++)
+				{
+					cls = result.data[0][j].bowls[i].status.replace(" ","").toLowerCase()
+					output += "<td><div class=\"status "+cls+"\">"+result.data[0][j].bowls[i].status+"</div></td>"
+				}
+
+				output += "</tr>"
+			}
+			
+			
+			output += "</table>"
+			
+			$("#data").html(output)
+			$("#currentDate").html($("#date").val())
+			$("#temperature").html(result.tempLowerMtnLow + "&#176;C / " + result.tempLowerMtnHigh + "&#176;C")
+			$("#newSnow").html(result.snow24 + "cm / 24 hrs")
+			console.log(result)
+			
+		}, 
+		"json")
+		
+		.fail(function(result) {
+			console.log(result)
+		})
+	}
+	
+	
+	function getLast7DaysSnow(date)
+	{	
+		// date = today.getDate()
+		$.post("getLast7DaysSnow.php", { date: date}, function(result)
+		{
+			console.log(result)	
+			
+			data = [['Date','Snow 24 hrs','Snow 48 hrs']]
+		  
+		  for (i=0; i<result.newSnow.length; i++)
+		  {
+			data.push([result.newSnow[i].date, parseInt(result.newSnow[i].snowReportNewSnowfall24),parseInt(result.newSnow[i].snowReportNewSnowfall48)])
+		  }
+		  
+			// Create the data table.
+		  var data = google.visualization.arrayToDataTable(data);
+			
+			var view = new google.visualization.DataView(data);
+			view.setColumns([0, 1, 2]);
+					   
+		  var options = {
+			//width: 500,
+			//height: 400,
+			legend: { position: 'top', maxLines: 3 },
+			bar: { groupWidth: '75%' },
+			isStacked: true,
+		  };
+
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.ColumnChart(document.getElementById("new_snow_chart"));
+			chart.draw(view, options);
+			
+		}, 
+		"json")
+		
+		.fail(function(result) {
+			console.log(result)
+		})
+	}
+	
+	
+	function getComments(date)
+	{	
+		// date = today.getDate()
+		$.post("getComments.php", { date: date}, function(result)
+		{
+			console.log(result)
+			$("#resort_comments").html("")
+			$("#resort_comments").html(result.comments[0].comments)
+
+		}, 
+		"json")
+		
+		.fail(function(result) {
+			console.log(result)
+		})
+	}
+	
+	
+	function getLast7DayTemps(date)
+	{	
+		// date = today.getDate()
+		$.post("getTempsLast7Days.php", { date: date }, function(result)
+		{
+			console.log(result)
+			
+			data = [['Date','Lower Mountain Low','Lower Mountain High','Upper Mountain Low','Upper Mountain High']]
+		  
+		  for (i=0; i<result.temps.length; i++)
+		  {
+			data.push([result.temps[i].date, parseInt(result.temps[i].minLower),parseInt(result.temps[i].maxLower),parseInt(result.temps[i].minUpper),parseInt(result.temps[i].maxUpper)])
+		  }
+		  
+			// Create the data table.
+			var data = google.visualization.arrayToDataTable(data);
+
+        var options = {
+          title: 'Mountain Temps',
+		  //width: 500,
+		 //height: 400,
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+		
+		
+        var chart = new google.charts.Line(document.getElementById('temps_chart'));
+
+        chart.draw(data, google.charts.Line.convertOptions(options));
+		  
+			
+		}, 
+		"json")
+		
+		.fail(function(result) {
+			console.log(result)
+		})
+	}
+
+	</script>
+	
+	
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+		
+	google.charts.load("current", { packages : ['corechart']});
+	google.charts.load('current', {'packages':['line']});
+     google.charts.setOnLoadCallback(getData);
+	
+	$("#button_prev_day").on("click", function() {
+		previousDate()
+	})
+	
+	$("#button_next_day").on("click", function() {
+		nextDate()
+	})
+    </script>
+	
+	
+<svg xmlns="http://www.w3.org/2000/svg" width="348" height="225" viewBox="0 0 348 225" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="17" style="font-weight:bold;font-size:17pt;font-family:Arial, Helvetica, Open Sans, sans-serif">Thumbnail</text></svg></body></html>
