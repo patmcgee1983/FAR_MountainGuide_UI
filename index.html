@@ -157,7 +157,7 @@
 		var mm = String(current_date.getMonth() + 1).padStart(2, '0'); //January is 0!
 		var yyyy = current_date.getFullYear();
 
-		current_date = yyyy + "-" + mm + "-" + (dd * 1 + 1)
+		current_date = yyyy + "-" + mm + "-" + dd
 				
 		getData(current_date)
 	}
@@ -172,7 +172,7 @@
 		var mm = String(current_date.getMonth() + 1).padStart(2, '0'); //January is 0!
 		var yyyy = current_date.getFullYear();
 
-		current_date = yyyy + "-" + mm + "-" + (dd * 1 + 1)
+		current_date = yyyy + "-" + mm + "-" + dd
 				
 		getData(current_date)
 	}
@@ -183,7 +183,7 @@
 
 		if (date)
 		{
-			var today = new Date(date.replace(/-/g, '/')
+			var today = new Date(date.replace(/-/g, '/'))
 		}
 		else
 		{
