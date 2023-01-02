@@ -149,7 +149,7 @@
 	
 	function previousDate()
 	{
-		current_date = new Date(global_date)
+		current_date = new Date(global_date.replace(/-/g, '/'))
 		
 		current_date.setDate(current_date.getDate()-1)
 		
@@ -164,7 +164,7 @@
 	
 	function nextDate()
 	{
-		current_date = new Date(global_date)
+		current_date = new Date(global_date.replace(/-/g, '/'))
 		
 		current_date.setDate(current_date.getDate()+1)
 		
@@ -183,7 +183,7 @@
 
 		if (date)
 		{
-			var today = new Date(date)
+			var today = new Date(date.replace(/-/g, '/')
 		}
 		else
 		{
